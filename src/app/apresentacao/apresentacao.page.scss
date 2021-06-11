@@ -1,0 +1,36 @@
+ion-slide {
+  height: 100vh;
+  flex-direction: column;
+  
+  
+    img {
+      width: 150px;
+    }
+
+    h2 {
+      font-size: 40px;
+      font-weight: bold;
+    }
+  }
+   
+  ion-card{
+    img {
+      width: 500px;
+    }
+  }
+
+  ion-content {
+    --background: url(../../assets/img/fundotela3.jpg) 
+    no-repeat center/cover fixed;
+  }
+
+  ion-card {
+    height: 30vh;
+    flex-direction: column;
+
+  }
+
+  ion-card-title {
+    font-size: 15px;
+      font-weight: bold;
+  }

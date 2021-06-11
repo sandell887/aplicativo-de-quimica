@@ -1,0 +1,38 @@
+ <ion-header>
+  <ion-toolbar color="primary">
+  	<ion-buttons slot="start">
+      <ion-back-button>voltar</ion-back-button>
+    </ion-buttons>
+    <ion-title>Nível 1<ion-icon name="flask"color=""></ion-icon></ion-title>
+  </ion-toolbar>
+  </ion-header>
+  <ion-item href="/tabs">
+    <ion-icon name="arrow-round-back" color="primary"></ion-icon> 
+      <ion-card-title>voltar</ion-card-title>
+    </ion-item>
+<!--<ion-item href="tabs/tab1"><ion-button>volta</ion-button></ion-item>-->
+
+<ion-content> 
+  
+  <ion-item *ngIf="score != undefined">
+    Acertos: {{score}} <!--moeda recolhida ira se chamar flask-->
+  </ion-item>
+  <ion-list>
+    <ion-radio-group *ngFor="let q of questions">
+      <ion-list-header>
+        <ion-label>{{q.question}}</ion-label>
+      </ion-list-header>
+  
+      <ion-item *ngFor="let a of q.answers">
+        <ion-label>{{a.answer}}</ion-label>
+        <ion-radio slot="start" (ionSelect)="selectAnswer(q.id, a.id)"></ion-radio>
+      </ion-item>
+
+    </ion-radio-group>
+  </ion-list>
+</ion-content>
+
+
+<ion-footer>
+  <ion-button color="primary" expand="block" (click)="showAnswer()">Confirmar Respostas</ion-button>
+</ion-footer>
